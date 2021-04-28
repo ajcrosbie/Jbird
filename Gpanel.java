@@ -74,13 +74,24 @@ public class Gpanel extends JPanel implements ActionListener {
         }
     }
 
+    public void dead() {
+        running = false;
+        System.out.println("you died ");
+
+    }
+
     public void collisions() {
         for (Pipe i : pipes) {
-            if (bird.y < i.y) {
-                if (bird.y > i.y + i.height) {
-                    if (bird.x < i.x) {
-                        if (bird.x > i.x + i.width) {
-                            System.out.println("hit");
+            // System.out.println(i.x);
+            if (bird.y + bird.size > i.y) {
+                // System.out.println("h");
+                if (bird.y < i.y + i.height) {
+                    // System.out.println("i");
+                    if (bird.x + bird.size > i.x) {
+                        // System.out.println("t");
+                        if (bird.x < i.x + i.width) {
+                            dead();
+                            break;
                         }
                     }
                 }
