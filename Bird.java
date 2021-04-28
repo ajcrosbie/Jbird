@@ -1,22 +1,23 @@
 public class Bird {
 
-    int speed;
-    int height;
-    int width;
+    int speed = 0;
+    int size = 40;
+    int y;
+    int x;
 
     Bird(int startH, int startW) {
-        height = startH;
-        width = startW;
+        y = startH;
+        x = startW;
     }
 
     public void move() {
-        height = height + speed;
+        y = y - speed;
         speed--;
     }
 
     public void bounce() {
         if (speed < 0) {
-            speed = 10;
+            speed = 13;
         }
     }
 }

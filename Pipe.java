@@ -1,16 +1,16 @@
 public class Pipe {
     int width = 100;
     int height;
-    int startH;
-    int startW;
+    int x;
+    int y;
 
     Pipe(int heightTemp, int startHTemp, int startWTemp) {
         height = heightTemp;
-        startH = startHTemp;
-        startW = startWTemp;
+        y = startHTemp;
+        x = startWTemp;
     }
 
     public void move() {
-        startW = startW - 10;
+        x = x - 10;
     }
 }
